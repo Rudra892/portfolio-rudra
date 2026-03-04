@@ -1,0 +1,162 @@
+:root {
+  --off-white: #F4F4F0;
+  --burnt-orange: #CC5500;
+  --deep-emerald: #043927;
+  --mustard: #E1AD01;
+  --onyx: #0F0F0F;
+
+  --font-display: 'Clash Display', sans-serif;
+  --font-subhead: 'Anton', sans-serif;
+  --font-body: 'JetBrains Mono', monospace;
+  --font-label: 'Space Mono', monospace;
+
+  --base-unit: 8px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  cursor: none;
+  /* Hide default cursor */
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  background-color: var(--off-white);
+  color: var(--onyx);
+  font-family: var(--font-body);
+  text-transform: uppercase;
+  /* ALL text: UPPERCASE ONLY */
+  transition: filter 0s, background-color 0s;
+}
+
+body.inverted {
+  filter: invert(1) hue-rotate(180deg);
+  background-color: var(--off-white);
+}
+
+/* CUSTOM SCROLLBAR */
+::-webkit-scrollbar {
+  width: 16px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--off-white);
+  border-left: 2px solid var(--onyx);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--onyx);
+  border: 2px solid var(--off-white);
+}
+
+/* NOISE OVERLAY */
+.noise-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 9998;
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* INVERT BUTTON */
+.invert-toggle {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  z-index: 9999;
+  background: var(--onyx);
+  color: var(--off-white);
+  font-family: var(--font-label);
+  font-size: 11px;
+  padding: 12px 16px;
+  border: none;
+  cursor: none;
+  text-transform: uppercase;
+}
+
+.invert-toggle:hover {
+  background: var(--mustard);
+  color: var(--onyx);
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+}
+
+/* CUSTOM CURSOR */
+.custom-cursor {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  pointer-events: none;
+  z-index: 10000;
+  transform: translate(-50%, -50%);
+  transition: transform 0s;
+}
+
+.custom-cursor.hovered {
+  transform: translate(-50%, -50%) scale(1.5);
+}
+
+.custom-cursor-trail {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  background-color: var(--mustard);
+  opacity: 0.5;
+  pointer-events: none;
+  z-index: 9999;
+  filter: blur(2px);
+}
+
+.crosshair-v,
+.crosshair-h {
+  position: absolute;
+  background-color: var(--onyx);
+}
+
+.crosshair-v {
+  width: 2px;
+  height: 20px;
+  left: 9px;
+  top: 0;
+}
+
+.crosshair-h {
+  width: 20px;
+  height: 2px;
+  left: 0;
+  top: 9px;
+}
+
+/* MIXINS & UTILITIES */
+.border-brutal {
+  border: 2px solid var(--onyx);
+}
+
+.interactive:active {
+  transform: scale(0.97);
+}
+
+/* SCROLL CONTAINER */
+.portfolio-scroll-container {
+  position: relative;
+  width: 100vw;
+}
+
+.sticky-section {
+  position: sticky;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+}

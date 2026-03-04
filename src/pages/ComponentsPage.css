@@ -1,0 +1,126 @@
+.components-page {
+    padding: 64px;
+    min-height: 100vh;
+    background-color: var(--off-white);
+}
+
+.components-header {
+    margin-bottom: 64px;
+    border-bottom: 2px solid var(--onyx);
+    padding-bottom: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.components-header h1 {
+    font-family: var(--font-display);
+    font-size: 48px;
+    line-height: 1;
+}
+
+.back-link {
+    font-family: var(--font-label);
+    font-size: 13px;
+    color: var(--onyx);
+    text-decoration: none;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+.component-showcase {
+    margin-bottom: 64px;
+}
+
+.component-showcase h2 {
+    font-family: var(--font-body);
+    font-size: 18px;
+    margin-bottom: 24px;
+}
+
+.state-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+}
+
+.state-card {
+    border: 2px solid var(--onyx);
+    display: flex;
+    flex-direction: column;
+}
+
+.state-label {
+    padding: 12px 16px;
+    border-bottom: 2px solid var(--onyx);
+    font-family: var(--font-label);
+    font-size: 11px;
+    background-color: var(--mustard);
+    color: var(--onyx);
+    font-weight: 700;
+}
+
+.showcase-container {
+    padding: 32px;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bg-emerald {
+    background-color: var(--deep-emerald);
+}
+
+.bg-onyx {
+    background-color: var(--onyx);
+}
+
+/* SIMULATED HOVERS */
+.project-row.hover-simulated {
+    background-color: var(--off-white);
+}
+
+.project-row.hover-simulated .project-glyph,
+.project-row.hover-simulated .project-name {
+    color: var(--onyx);
+}
+
+.project-row.hover-simulated .project-year,
+.project-row.hover-simulated .project-desc {
+    color: var(--onyx);
+}
+
+.project-row.hover-simulated .project-tags {
+    color: var(--burnt-orange);
+}
+
+.project-row.hover-simulated .project-glyph {
+    transform: scale(1.1);
+}
+
+.linkedin-btn.btn-hover-simulated {
+    background-color: var(--off-white);
+    color: var(--onyx);
+}
+
+.github-btn.btn-hover-simulated {
+    background-color: var(--mustard);
+    color: var(--onyx);
+}
+
+.btn-hover-simulated .arrow {
+    transform: translateX(8px);
+}
+
+@media (max-width: 768px) {
+    .state-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .components-page {
+        padding: 24px;
+    }
+}

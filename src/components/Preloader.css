@@ -1,0 +1,85 @@
+.preloader-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 99999;
+    background-color: var(--mustard);
+    color: var(--onyx);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.preloader-overlay {
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    background-color: var(--onyx);
+    z-index: -1;
+}
+
+.preloader-overlay.top {
+    top: 0;
+    animation: bg-glitch 0.2s infinite alternate;
+}
+
+.preloader-overlay.bottom {
+    bottom: 0;
+    background-color: var(--mustard);
+}
+
+.preloader-content {
+    width: 80%;
+    border: 4px solid var(--onyx);
+    background-color: var(--off-white);
+    padding: 40px;
+    position: relative;
+    box-shadow: 16px 16px 0px var(--onyx);
+}
+
+.preloader-terminal {
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.8;
+    margin-bottom: 40px;
+}
+
+.preloader-percentage {
+    font-family: var(--font-display);
+    font-size: clamp(80px, 15vw, 200px);
+    line-height: 0.8;
+    text-align: right;
+    letter-spacing: -0.05em;
+}
+
+@keyframes bg-glitch {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(10px);
+    }
+}
+
+/* OUT ANIMATION applied in App.jsx */
+.preloader-exit {
+    animation: preloader-smash 0.5s cubic-bezier(0.85, 0, 0.15, 1) forwards;
+}
+
+@keyframes preloader-smash {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-100vh);
+        opacity: 0;
+    }
+}

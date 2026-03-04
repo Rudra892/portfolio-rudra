@@ -1,0 +1,116 @@
+.certifications-section {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--off-white);
+    color: var(--onyx);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.section-header-05 {
+    position: absolute;
+    top: 40px;
+    left: 64px;
+    font-family: var(--font-label);
+    font-size: 11px;
+    color: var(--onyx);
+    opacity: 0.6;
+}
+
+.certs-grid {
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+    flex: 1;
+}
+
+.cert-card {
+    flex: 1;
+    border-top: 2px solid var(--onyx);
+    display: flex;
+    flex-direction: column;
+    padding: 40px 64px;
+    transition: background-color 0s, color 0s;
+    overflow: hidden;
+    position: relative;
+}
+
+.cert-top {
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--font-label);
+    font-size: 13px;
+    margin-bottom: auto;
+}
+
+.cert-title {
+    font-family: var(--font-display);
+    font-size: clamp(32px, 5vw, 64px);
+    line-height: 1;
+    text-transform: uppercase;
+    z-index: 2;
+}
+
+/* Internal Marquee Hover Animation */
+.cert-skills-marquee {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 48px;
+    background-color: var(--emerald);
+    display: flex;
+    align-items: center;
+    border-top: 2px solid var(--onyx);
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: transform 0ms, opacity 0ms;
+}
+
+.cert-marquee-content {
+    display: flex;
+    white-space: nowrap;
+    animation: scroll-left 10s linear infinite;
+    font-family: var(--font-body);
+    font-size: 14px;
+    color: var(--off-white);
+}
+
+@keyframes scroll-left {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Hover brutality */
+.cert-card:hover {
+    background-color: var(--deep-emerald);
+    color: var(--off-white);
+}
+
+.cert-card:hover .cert-skills-marquee {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.cert-card:hover .cert-marquee-content {
+    color: var(--mustard);
+}
+
+@media (max-width: 768px) {
+    .cert-card {
+        padding: 24px;
+        justify-content: flex-start;
+        gap: 16px;
+    }
+
+    .cert-title {
+        margin-top: 24px;
+    }
+}
