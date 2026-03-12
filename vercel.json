@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "buildCommand": "npm run build",
+  "buildCommand": "npm install --prefer-offline && ./node_modules/.bin/vite build || npx vite@4.4.5 build",
   "outputDirectory": "dist",
   "framework": "vite",
   "installCommand": "npm install",
